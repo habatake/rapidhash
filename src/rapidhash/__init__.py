@@ -44,8 +44,8 @@ def rapidhash_file(filename,seed=None) -> int:
     try:
         return rs_rapidhash_file(filename,seed)
     except TypeError as e:
-        if not isinstance(key, bytes):
-            err = "key must be bytes"
+        if not isinstance(filename, str):
+            err = "filename must be a string"
             raise TypeError(err) from e
         if not isinstance(seed, int | None):
             err = "seed must be an integer or None"
